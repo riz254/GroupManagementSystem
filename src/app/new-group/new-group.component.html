@@ -1,0 +1,50 @@
+<div class="form-wrapper">
+  <div class="form-card">
+    <header class="card-header">
+      <i class="fa-solid fa-user-circle"></i>
+      <h2>Add a New group</h2>
+    </header>
+    <form (ngSubmit)="onSubmit(groupForm)" #groupForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            ngModel
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="refNumber">Reference Number</label>
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            id="refNumber"
+            name="refNumber"
+            class="form-control"
+            ngModel
+            required
+          />
+        </div>
+      </div>
+
+      <div
+        *ngIf="groupForm.invalid && groupForm.dirty"
+        class="form-text text-danger mt-2"
+      >
+        Required field
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="groupForm.invalid">
+        form
+      </button>
+      <button class="btn-secondary mt-3" routerLink="/">Back</button>
+    </form>
+  </div>
+</div>

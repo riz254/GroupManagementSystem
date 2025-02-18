@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <!-- <th scope="col">ID no.</th>
+            <th scope="col">Phone Number</th> -->
+          <!-- <th scope="col">group</th> -->
+          <th scope="col">Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of memberArray">
+          <td>{{ t.id }}</td>
+          <td>{{ t.firstname }}</td>
+          <td>{{ t.lastname }}</td>
+          <!-- <td>{{ t.nationalid }}</td>
+            <td>{{ t.phonenumber }}</td> -->
+          <td>{{ t.savings }}</td>
+
+          <!-- <button class="btn btn-success btn-sm" (click)="confirmUpdate(t)">
+                Confirm
+              </button> -->
+          <td>
+            <button class="viewMore" [routerLink]="['/details', t.id]">
+              View More
+            </button>
+          </td>
+          <!-- <td>
+              <button class="btn btn-danger btn-sm" (click)="onDelete(t.id)">
+                Delete
+              </button>
+            </td> -->
+
+          <td>
+            <button
+              class="btn btn-danger btn-sm"
+              [routerLink]="['/members', t.id, 'newMember']"
+            >
+              Apply Loan
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Group Name</th>
+          <!-- <th scope="col">ID no.</th>
+              <th scope="col">Phone Number</th> -->
+          <!-- <th scope="col">group</th> -->
+          <th scope="col">Reference Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of groupArray">
+          <td>{{ t.id }}</td>
+          <td>{{ t.name }}</td>
+          <td>{{ t.refNumber }}</td>
+          <!-- <td>{{ t.nationalid }}</td>
+              <td>{{ t.phonenumber }}</td> -->
+          <!-- <td>{{ t.savings }}</td> -->
+
+          <!-- <button class="btn btn-success btn-sm" (click)="confirmUpdate(t)">
+                  Confirm
+                </button> -->
+          <td>
+            <button class="viewMore" [routerLink]="['/members', t.id]">
+              View Members
+            </button>
+          </td>
+          <!-- <td>
+                <button class="btn btn-danger btn-sm" (click)="onDelete(t.id)">
+                  Delete
+                </button>
+              </td> -->
+
+          <td>
+            <button
+              class="btn btn-danger btn-sm"
+              [routerLink]="['/members', t.id, 'newMember']"
+            >
+              Add Member
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
