@@ -1,0 +1,119 @@
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+.table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    /* Ensures horizontal scrolling on smaller screens */
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background-color: #002136;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table Header */
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+    /* Prevents text from breaking inside cells */
+}
+
+/* Table Row Alternating Colors */
+tr:nth-child(odd) {
+    background-color: #ffffff !important;
+    /* White for odd rows */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+    /* Light gray for even rows */
+}
+
+/* Ensure Borders are Visible */
+.table tbody tr {
+    border-bottom: 1px solid #ddd !important;
+}
+
+/* "View More" button */
+.viewMore {
+    background-color: #0b6e00c3;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.viewMore:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .table {
+        display: block;
+        width: 100%;
+    }
+
+    /* Stack table rows vertically */
+    .table thead {
+        display: none;
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border: none;
+        font-size: 14px;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}

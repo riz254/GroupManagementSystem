@@ -1,5 +1,6 @@
 export interface Member {
   id?: number;
+  // groupId: number;
   firstname: string;
   lastname: string;
   nationalid: string;

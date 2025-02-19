@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "name": "Savings Group A",
+    "refNumber": "SGA-001",
+    "members": [
+      {
+        "id": 101,
+        "firstname": "Alice",
+        "lastname": "Johnson",
+        "nationalid": "123456789",
+        "phonenumber": "0712345678",
+        "savings": 5000
+      },
+      {
+        "id": 102,
+        "firstname": "Bob",
+        "lastname": "Smith",
+        "nationalid": "987654321",
+        "phonenumber": "0798765432",
+        "savings": 3000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Investors Club",
+    "refNumber": "INV-002",
+    "members": [
+      {
+        "id": 103,
+        "firstname": "Charlie",
+        "lastname": "Brown",
+        "nationalid": "456789123",
+        "phonenumber": "0723456789",
+        "savings": 7000
+      }
+    ]
+  }
+]

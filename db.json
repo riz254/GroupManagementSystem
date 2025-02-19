@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Group 1",
+      "refNumber": "REF123",
+      "members": [
+        {
+          "id": 1,
+          "firstname": "John",
+          "lastname": "Doe",
+          "nationalid": "1234567890",
+          "phonenumber": "555-1234",
+          "savings": 500
+        },
+        {
+          "id": 2,
+          "firstname": "Jane",
+          "lastname": "Smith",
+          "nationalid": "0987654321",
+          "phonenumber": "555-5678",
+          "savings": 300
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Group 2",
+      "refNumber": "REF456",
+      "members": [
+        {
+          "id": 3,
+          "firstname": "Alice",
+          "lastname": "Johnson",
+          "nationalid": "1122334455",
+          "phonenumber": "555-9876",
+          "savings": 800
+        }
+      ]
+    }
+  ]
+}

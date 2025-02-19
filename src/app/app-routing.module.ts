@@ -4,13 +4,18 @@ import { GroupComponent } from './group/group.component';
 import { MembersComponent } from './members/members.component';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { NewMemberComponent } from './new-member/new-member.component';
+import { MemberDetailsComponent } from './member-details/member-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/groups', pathMatch: 'full' },
   { path: 'groups', component: GroupComponent },
-  { path: 'members', component: MembersComponent },
-  { path: 'members/:id/newMember', component: NewMemberComponent }, // Route for the task detail view
+  { path: 'groups/:groupId/members', component: MembersComponent },
+  { path: 'groups/:groupId/newMember', component: NewMemberComponent }, // Route for the task detail view
   { path: 'New', component: NewGroupComponent }, // Route for the task detail view
+  {
+    path: 'groups/:groupId/members/:memberId',
+    component: MemberDetailsComponent,
+  },
 ];
 
 @NgModule({

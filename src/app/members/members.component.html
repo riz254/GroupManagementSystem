@@ -1,4 +1,11 @@
 <div class="container">
+  <h2>Members of Group {{ groupId }}</h2>
+  <button
+    class="btn btn-danger btn-sm"
+    [routerLink]="['/groups', groupId, 'newMember']"
+  >
+    Add Member
+  </button>
   <div class="table-container">
     <table class="table">
       <thead>
@@ -25,7 +32,7 @@
                 Confirm
               </button> -->
           <td>
-            <button class="viewMore" [routerLink]="['/details', t.id]">
+            <button class="viewMore" [routerLink]="['/member', t.id]">
               View More
             </button>
           </td>
@@ -34,15 +41,6 @@
                 Delete
               </button>
             </td> -->
-
-          <td>
-            <button
-              class="btn btn-danger btn-sm"
-              [routerLink]="['/members', t.id, 'newMember']"
-            >
-              Apply Loan
-            </button>
-          </td>
         </tr>
       </tbody>
     </table>

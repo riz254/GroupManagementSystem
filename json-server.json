@@ -1,0 +1,6 @@
+{
+  "routes": {
+    "/groups/:groupId/members": "/groups/:groupId",
+    "/groups/:groupId/members/:memberId": "/groups/:groupId"
+  }
+}

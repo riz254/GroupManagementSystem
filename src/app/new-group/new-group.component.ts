@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { GroupsService } from '../groups.service';
+import { Group } from '../group.model';
+import { Member } from '../member.model';
 
 @Component({
   selector: 'app-new-group',
@@ -14,14 +16,13 @@ export class NewGroupComponent {
 
   // Submit the form to create a new customer
   onSubmit(form: NgForm) {
-    const newGroup = new Group(
-      form.controls['name'].value, // Now 'customer' is mapped to 'title' in customer model
-      form.controls['refNumber'].value
+    const newGroup: Group = {
+      name: form.controls['name'].value,
+      refNumber: form.controls['refNumber'].value,
+      members: [],
+    };
 
-      // new Date(form.controls['dueDate'].value) // Convert 'dueDate' string to Date object
-    );
-
-    this.customerService.addGroup(newGroup).subscribe((response) => {
+    this.groupService.addGroup(newGroup).subscribe((response) => {
       // Handle success
       alert('Group added successfully');
     });

@@ -9,6 +9,8 @@ import { MembersComponent } from './members/members.component';
 import { NewGroupComponent } from './new-group/new-group.component';
 import { NewMemberComponent } from './new-member/new-member.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MemberDetailsComponent } from './member-details/member-details.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { FormsModule } from '@angular/forms';
     MembersComponent,
     NewGroupComponent,
     NewMemberComponent,
+    MemberDetailsComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

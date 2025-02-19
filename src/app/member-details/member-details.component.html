@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Member Details</h2>
+  <form #form="ngForm" (ngSubmit)="onUpdateSavings(form)">
+    <div>
+      <label>First Name</label>
+      <input
+        type="text"
+        [(ngModel)]="member.firstname"
+        name="firstname"
+        disabled
+      />
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input
+        type="text"
+        [(ngModel)]="member.lastname"
+        name="lastname"
+        disabled
+      />
+    </div>
+    <div>
+      <label>Savings</label>
+      <input
+        type="number"
+        [(ngModel)]="member.savings"
+        name="savings"
+        placeholder="Enter new savings"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Update Savings</button>
+  </form>
+</div>

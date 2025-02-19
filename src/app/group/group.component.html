@@ -1,14 +1,19 @@
 <div class="container">
   <div class="table-container">
+    <div class="header">
+      <h2>Group Details</h2>
+      <button class="btn btn-danger btn-sm" routerLink="/New">Add Group</button>
+    </div>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Number</th>
           <th scope="col">Group Name</th>
-          <!-- <th scope="col">ID no.</th>
-              <th scope="col">Phone Number</th> -->
+
           <!-- <th scope="col">group</th> -->
           <th scope="col">Reference Number</th>
+          <th scope="col">Details</th>
+          <th scope="col">New Member</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +29,10 @@
                   Confirm
                 </button> -->
           <td>
-            <button class="viewMore" [routerLink]="['/members', t.id]">
+            <button
+              class="viewMore"
+              [routerLink]="['/groups', t.id, 'members']"
+            >
               View Members
             </button>
           </td>
@@ -37,7 +45,7 @@
           <td>
             <button
               class="btn btn-danger btn-sm"
-              [routerLink]="['/members', t.id, 'newMember']"
+              [routerLink]="['/groups', t.id, 'members', 'new']"
             >
               Add Member
             </button>

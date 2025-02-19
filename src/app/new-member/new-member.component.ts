@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { GroupsService } from '../groups.service';
+import { Group } from '../group.model';
+import { Member } from '../member.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-member',
@@ -10,23 +13,39 @@ import { GroupsService } from '../groups.service';
 })
 export class NewMemberComponent {
   // getting the customer array from customer service
-  constructor(private memberService: GroupsService) {}
+  constructor(
+    private memberService: GroupsService,
+    private route: ActivatedRoute
+  ) {}
+
+  groupId!: number;
+
+  ngOnInit() {
+    // Get the group ID from the URL
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.groupId = +id;
+      }
+    });
+  }
 
   // Submit the form to create a new customer
   onSubmit(form: NgForm) {
-    const newMember = new Member(
-      form.controls['firstname'].value, // Now 'customer' is mapped to 'title' in customer model
-      form.controls['lastname'].value,
-      form.controls['nationalid'].value,
-      form.controls['phonenumber'].value
+    const newMember: Member = {
+      firstname: form.controls['firstname'].value,
+      lastname: form.controls['lastname'].value,
+      nationalid: form.controls['nationalid'].value,
+      phonenumber: form.controls['phonenumber'].value,
+      savings: 0, // Default savings value
+    };
 
-      // new Date(form.controls['dueDate'].value) // Convert 'dueDate' string to Date object
-    );
-
-    this.memberService.addMember(newMember).subscribe((response) => {
-      // Handle success
-      alert('member added successfully');
-    });
+    this.memberService
+      .addMember(this.groupId, newMember)
+      .subscribe((response) => {
+        // Handle success
+        alert('member added successfully');
+      });
     form.resetForm();
   }
 }
